@@ -33,6 +33,29 @@ def main():
 
     print('toto')
     my_func("coucou")
+    conn.executescript(
+        """
+        DROP TABLE IF EXISTS foobar;
+        -- Cocuou
+        CREATE TABLE foobar (
+            last_name TEXT TEXT NOT NULL,
+            start_day TEXT NOT NULL
+        )
+        """
+    )
+
+    print('toto')
+    my_func("coucou")
+
+    t = """SELECT auneisrta FROM auniestnarsuiet"""
+
+    print('toto')
+    my_func("coucou")
+
+    tt = '''SELECT tot FROM anursiet'''
+
+    print('toto')
+    my_func("coucou")
 
     """<p>Cocuou</p>"""
 
@@ -41,6 +64,12 @@ def main():
     my_func("coucou")
 
     conn.executemany("INSERT INTO foobar VALUES (?, ?);", DATASET)
+
+
+    print('toto')
+    my_func("coucou")
+
+    conn.executemany("INSERT INTO foobar VALUES (?, ?)", DATASET)
 
 
     print('toto')
@@ -87,11 +116,24 @@ def main():
         WHERE start_day >= '2019-01-01'
         GROUP BY last_name, start_day
         ORDER BY num_entries DESC
-        LIMIT 10;
+        LIMIT 10
     """
 
+    print('toto')
+    my_func("coucou")
+
     another_query = "SELECT last_name FROM foobar;"
+    print('toto')
+    my_func("coucou")
     yaq = 'SELECT last_name FROM foobar;'
+
+    print('toto')
+    my_func("coucou")
+
+    another_query = "SELECT last_name FROM foobar"
+    print('toto')
+    my_func("coucou")
+    yaq = 'SELECT last_name FROM foobar'
 
     print('toto')
     my_func("coucou")
@@ -105,7 +147,8 @@ def main():
 
     yaq3 = '''
          SELECT last_name FROM foobar
-         WHERE start_day >= '2019-01-01'
+         WHERE start_day >= '2019-01-01' AND start_day < '2020-01-01'
+            AND tartiflette = 'toto'
     '''
 
     print('toto')
