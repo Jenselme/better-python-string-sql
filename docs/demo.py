@@ -30,8 +30,7 @@ def main():
         """
     )
 
-
-    print('toto')
+    print("toto")
     my_func("coucou")
     conn.executescript(
         """
@@ -44,35 +43,39 @@ def main():
         """
     )
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
     t = """SELECT auneisrta FROM auniestnarsuiet"""
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
-    tt = '''SELECT tot FROM anursiet'''
+    tt = """SELECT tot FROM anursiet"""
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
-    """<p>Cocuou</p>"""
+    t = """<p>Cocuou</p>"""
 
+    """SELECT toto from toto"""
 
-    print('toto')
+    print("toto")
+    my_func("coucou")
+
+    x = """SELECT * from toto"""
+
+    print("toto")
     my_func("coucou")
 
     conn.executemany("INSERT INTO foobar VALUES (?, ?);", DATASET)
 
-
-    print('toto')
+    print("toto")
     my_func("coucou")
 
     conn.executemany("INSERT INTO foobar VALUES (?, ?)", DATASET)
 
-
-    print('toto')
+    print("toto")
     my_func("coucou")
 
     query2 = """
@@ -88,7 +91,7 @@ def main():
         LIMIT 10;
     """
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
     query = """
@@ -102,8 +105,7 @@ def main():
         LIMIT 10;
     """
 
-
-    print('toto')
+    print("toto")
     my_func("coucou")
 
     query3 = f"""
@@ -119,39 +121,39 @@ def main():
         LIMIT 10
     """
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
     another_query = "SELECT last_name FROM foobar;"
-    print('toto')
+    print("toto")
     my_func("coucou")
-    yaq = 'SELECT last_name FROM foobar;'
+    yaq = "SELECT last_name FROM foobar;"
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
     another_query = "SELECT last_name FROM foobar"
-    print('toto')
+    print("toto")
     my_func("coucou")
-    yaq = 'SELECT last_name FROM foobar'
+    yaq = "SELECT last_name FROM foobar"
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
-    yaq2 = '''
+    yaq2 = """
         SELECT last_name FROM foobar
-    '''
+    """
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
-    yaq3 = '''
+    yaq3 = """
          SELECT last_name FROM foobar
          WHERE start_day >= '2019-01-01' AND start_day < '2020-01-01'
             AND tartiflette = 'toto'
-    '''
+    """
 
-    print('toto')
+    print("toto")
     my_func("coucou")
 
     print(conn.execute(query).fetchall())
@@ -174,7 +176,7 @@ LIMIT 10;
 select column_name from schema_name.table_name;
 """
 
-multi_SQL_with_Sign = '''
+multi_SQL_with_Sign = """
 --beginsql Highlight
 drop TABLE schema_name.table_name;
 insert INTO schema_name.table_name(id, grade) VALUES(1, 100);
@@ -183,7 +185,7 @@ select `last_name`, start_day FROM schema_name.table_name;
 -- Not Highlight
 drop TABLE schema_name.table_name;
 insert INTO schema_name.table_name(id, grade) VALUES(1, 100);
-'''
+"""
 
 SQL_without_Sign = """
 -- Highlight
@@ -207,7 +209,7 @@ select column_name from schema_name.table_name;
 # --endsql
 #
 
-sql = 'SELECT * FROM schema_name.table_name;'
+sql = "SELECT * FROM schema_name.table_name;"
 
 html = """<p>Coucou</p>"""
 
@@ -274,7 +276,9 @@ FROM
 WHERE birth > '{day}'
     AND `name` != '{banned}man'
 ;
-""".format(banned='bat', day='2019-09-26')
+""".format(
+    banned="bat", day="2019-09-26"
+)
 
 # ANCHOR yaml test
 """
@@ -285,3 +289,22 @@ values:
   - better
   # comment
 #!yaml
+"""
+
+html = """
+<table>
+  <tr>
+    <td>100</td>
+  </tr>
+</table>
+
+<hr>
+<h2>1 Row and 3 Columns:</h2>
+<table>
+  <tr>
+    <td>100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+</table>
+"""
