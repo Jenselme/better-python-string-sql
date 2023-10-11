@@ -78,6 +78,17 @@ def main():
     print("toto")
     my_func("coucou")
 
+    conn.executemany("INSERT INTO foobar VALUES ('toto', ?)", DATASET)
+
+    qq = """
+    SELECT
+        CONCAT(tab.title, " activities") as tab
+    FROM toto;
+    """
+
+    print("toto")
+    my_func("coucou")
+
     query2 = """
         SELECT
             last_name,
