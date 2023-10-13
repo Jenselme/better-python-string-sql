@@ -15,6 +15,13 @@ DATASET = [
 
 
 def main():
+    """Let’s try with a docstring that will select stuff"""
+
+    logger.error(
+        'Oh no: trying to update non-existing thing: %s'.format(),
+        23
+    )
+
     conn = sqlite3.connect(":memory:")
 
     toto = "selectedFiles"
