@@ -173,6 +173,16 @@ def main():
 
     print(conn.execute(query).fetchall())
 
+    print(conn.execute('SELECT * FROM my_table'))
+
+    print("toto")
+    my_func("coucou")
+
+    queries = {'toto': 'SELECT * FROM my_table'}
+
+    print("toto")
+    my_func("coucou")
+
 
 if __name__ == "__main__":
     main()
