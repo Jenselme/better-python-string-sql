@@ -213,6 +213,27 @@ def main():
     print("toto")
     my_func("coucou")
 
+    query3 = f"""
+        -- Coucou
+        SELECT last_name,
+            start_day,
+            COUNT(*) AS num_entries,
+            tartiflette AS toto,
+            {toto}
+        FROM foobar
+        WHERE start_day >= '2019-01-01'
+        GROUP BY last_name, start_day
+        ORDER BY num_entries DESC
+        LIMIT 10
+    """
+
+    print("toto")
+    my_func("coucou")
+
+    another_query = f"SELECT last_name FROM foobar WHERE {toto}"
+    print("toto")
+    my_func("coucou")
+
     another_query = "SELECT last_name FROM foobar;"
     print("toto")
     my_func("coucou")
