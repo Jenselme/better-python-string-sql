@@ -6,11 +6,29 @@
     "patterns": [
         {
             "name": "meta.embedded.block.sql",
-            "begin": "(?<![a-zA-Z0-1]+\\s+)(((?i)explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace|with))\\s+",
-            "end": ";|(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\})|--)",
+            "begin": "(?<![a-zA-Z0-1]+\\s+)(EXPLAIN|ALTER|ANALYZE|ATTACH|BEGIN|COMMIT|CREATE|DELETE|DETACH|DROP|INSERT|PRAGMA|REINDEX|RELEASE|ROLLBACK|SAVEPOINT|SELECT|UPDATE|VACUUM|REPLACE|WITH)\\b",
+            "end": ";|(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\}))",
             "beginCaptures": {
                 "1": {
                     "name": "keyword.other.DML.sql"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.sql"
+                },
+                {
+                    "include": "source.python#fstring-guts"
+                }
+            ]
+        },
+        {
+            "name": "meta.embedded.block.sql",
+            "begin": "(?<![a-zA-Z0-1]+\\s+)(--.+)\\b",
+            "end": ";|(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\}))",
+            "beginCaptures": {
+                "1": {
+                    "name": "comment.line.double-dash.sql"
                 }
             },
             "patterns": [

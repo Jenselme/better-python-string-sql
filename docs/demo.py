@@ -50,6 +50,15 @@ def main():
     )
     conn = sqlite3.connect(":memory:")
 
+    logger.error(
+        """
+        Oh no: trying to
+        I am try to UPDATE non-existing thing: %s
+        """.format(),
+        23,
+    )
+    conn = sqlite3.connect(":memory:")
+
     toto = "selectedFiles"
 
     conn.executescript(
