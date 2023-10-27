@@ -21,7 +21,50 @@ def main():
 
     conn = sqlite3.connect(":memory:")
 
+    logger.error("""Oh no: trying to update non-existing thing: %s""".format(), 23)
+
+    conn = sqlite3.connect(":memory:")
+
+    logger.error(
+        """
+                 Oh no: trying to update non-existing thing: %s
+                 """.format(),
+        23,
+    )
+    conn = sqlite3.connect(":memory:")
+
+    logger.error(
+        """
+        Oh no: trying to update non-existing thing: %s
+        """.format(),
+        23,
+    )
+    conn = sqlite3.connect(":memory:")
+
+    logger.error(
+        """
+        Oh no: trying to
+        update non-existing thing: %s
+        """.format(),
+        23,
+    )
+    conn = sqlite3.connect(":memory:")
+
     toto = "selectedFiles"
+
+    conn.executescript(
+        """
+        -- Comment
+        SELECT *
+        -- Coucou
+        FROM X
+        -- Cocuou
+        WHERE id IS NOT NULL
+        """
+    )
+
+    print("toto")
+    my_func("coucou")
 
     conn.executescript(
         """
@@ -36,6 +79,7 @@ def main():
 
     print("toto")
     my_func("coucou")
+
     conn.executescript(
         """
         DROP TABLE IF EXISTS foobar;
@@ -77,6 +121,11 @@ def main():
     print("toto")
     my_func("coucou")
 
+    conn.executemany('INSERT INTO foobar VALUES (?, ?);', DATASET)
+
+    print("toto")
+    my_func("coucou")
+
     conn.executemany("INSERT INTO foobar VALUES (?, ?)", DATASET)
 
     print("toto")
@@ -105,6 +154,22 @@ def main():
         ORDER BY num_entries DESC
         LIMIT 10;
     """
+
+    print("toto")
+    my_func("coucou")
+
+    query2 = '''
+        SELECT
+            last_name,
+            -- Test with update
+            start_day,
+            COUNT(*) AS num_entries
+        FROM foobar
+        WHERE start_day >= '2019-01-01'
+        GROUP BY last_name, start_day
+        ORDER BY num_entries DESC
+        LIMIT 10;
+    '''
 
     print("toto")
     my_func("coucou")
@@ -171,14 +236,23 @@ def main():
     print("toto")
     my_func("coucou")
 
-    print(conn.execute(query).fetchall())
-
-    print(conn.execute('SELECT * FROM my_table'))
+    yaq3 = """
+         SELECT last_name FROM foobar
+         WHERE start_day >= '2019-01-01' AND start_day < '2020-01-01'
+            AND tartiflette = 'toto'
+    """
 
     print("toto")
     my_func("coucou")
 
-    queries = {'toto': 'SELECT * FROM my_table'}
+    print(conn.execute(query).fetchall())
+
+    print(conn.execute("SELECT * FROM my_table"))
+
+    print("toto")
+    my_func("coucou")
+
+    queries = {"toto": "SELECT * FROM my_table"}
 
     print("toto")
     my_func("coucou")

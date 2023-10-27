@@ -6,25 +6,7 @@
     "patterns": [
         {
             "name": "meta.embedded.block.sql",
-            "begin": "^\\s*((?i)(explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace|with))\\s+",
-            "end": ";|(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\})|--)",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword.other.DML.sql"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "source.sql"
-                },
-                {
-                    "include": "source.python#fstring-guts"
-                }
-            ]
-        },
-        {
-            "name": "meta.embedded.block.sql",
-            "begin": "((?i)(explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace|with))\\s+",
+            "begin": "(?<![a-zA-Z0-1]+\\s+)(((?i)explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace|with))\\s+",
             "end": ";|(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\})|--)",
             "beginCaptures": {
                 "1": {
