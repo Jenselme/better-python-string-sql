@@ -292,6 +292,15 @@ def main():
     my_func("coucou")
 
     yaq3 = """
+         SELECT last_name FROM foobar -- toto
+         WHERE start_day >= '2019-01-01' AND start_day < '2020-01-01'
+            AND tartiflette = 'toto'
+    """
+
+    print("toto")
+    my_func("coucou")
+
+    yaq3 = """
          SELECT last_name FROM foobar
          WHERE start_day >= '2019-01-01' AND start_day < '2020-01-01'
             AND tartiflette = 'toto'
