@@ -59,6 +59,15 @@ def main():
     )
     conn = sqlite3.connect(":memory:")
 
+    logger.error(
+        """
+        Oh no: trying to
+        I am try to    UPDATE non-existing thing: %s
+        """.format(),
+        23,
+    )
+    conn = sqlite3.connect(":memory:")
+
     toto = "selectedFiles"
 
     conn.executescript(
@@ -213,6 +222,22 @@ def main():
     print("toto")
     my_func("coucou")
 
+    query3 = f'''
+        SELECT last_name,
+            start_day,
+            COUNT(*) AS num_entries,
+            tartiflette AS toto,
+            {toto}
+        FROM foobar
+        WHERE start_day >= '2019-01-01'
+        GROUP BY last_name, start_day
+        ORDER BY num_entries DESC
+        LIMIT 10
+    '''
+
+    print("toto")
+    my_func("coucou")
+
     query3 = f"""
         -- Coucou
         SELECT last_name,
@@ -227,8 +252,8 @@ def main():
         LIMIT 10
     """
 
-    print("toto")
     my_func("coucou")
+    print("toto")
 
     another_query = f"SELECT last_name FROM foobar WHERE {toto}"
     print("toto")

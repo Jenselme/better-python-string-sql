@@ -6,7 +6,7 @@
     "patterns": [
         {
             "name": "meta.embedded.block.sql",
-            "begin": "(?<![a-zA-Z0-1]+\\s+)(EXPLAIN|ALTER|ANALYZE|ATTACH|BEGIN|COMMIT|CREATE|DELETE|DETACH|DROP|INSERT|PRAGMA|REINDEX|RELEASE|ROLLBACK|SAVEPOINT|SELECT|UPDATE|VACUUM|REPLACE|WITH)\\b",
+            "begin": "(?<!\\w+\\s+)(EXPLAIN|ALTER|ANALYZE|ATTACH|BEGIN|COMMIT|CREATE|DELETE|DETACH|DROP|INSERT|PRAGMA|REINDEX|RELEASE|ROLLBACK|SAVEPOINT|SELECT|UPDATE|VACUUM|REPLACE|WITH)\\b",
             "end": "(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\})|--)",
             "beginCaptures": {
                 "1": {
@@ -21,7 +21,37 @@
         },
         {
             "name": "meta.embedded.block.sql",
-            "begin": "(?<![a-zA-Z0-1]+\\s+)(--.+)\\b",
+            "begin": "^\\s*(EXPLAIN|ALTER|ANALYZE|ATTACH|BEGIN|COMMIT|CREATE|DELETE|DETACH|DROP|INSERT|PRAGMA|REINDEX|RELEASE|ROLLBACK|SAVEPOINT|SELECT|UPDATE|VACUUM|REPLACE|WITH)\\b",
+            "end": "(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\})|--)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.other.DML.sql"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.sql"
+                }
+            ]
+        },
+        {
+            "name": "meta.embedded.block.sql",
+            "begin": "(?<!\\w+\\s+)(--.+)\\b",
+            "end": "(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\})|--)",
+            "beginCaptures": {
+                "1": {
+                    "name": "comment.line.double-dash.sql"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.sql"
+                }
+            ]
+        },
+        {
+            "name": "meta.embedded.block.sql",
+            "begin": "^\\s*(--.+)\\b",
             "end": "(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\})|--)",
             "beginCaptures": {
                 "1": {
