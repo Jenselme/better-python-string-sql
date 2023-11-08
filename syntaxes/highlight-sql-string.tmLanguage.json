@@ -7,7 +7,7 @@
         {
             "name": "meta.embedded.block.sql",
             "begin": "(?<!\\w+\\s+)(EXPLAIN|ALTER|ANALYZE|ATTACH|BEGIN|COMMIT|CREATE|DELETE|DETACH|DROP|INSERT|PRAGMA|REINDEX|RELEASE|ROLLBACK|SAVEPOINT|SELECT|UPDATE|VACUUM|REPLACE|WITH)\\b",
-            "end": "(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\}))",
+            "end": "(?=\"\"\"|\"( ?\n|'|,|\\.|\\)|\\})|'''|'( ?\n|\"|,|\\.|\\)|\\}))",
             "beginCaptures": {
                 "1": {
                     "name": "keyword.other.DML.sql"
@@ -22,7 +22,7 @@
         {
             "name": "meta.embedded.block.sql",
             "begin": "^\\s*(EXPLAIN|ALTER|ANALYZE|ATTACH|BEGIN|COMMIT|CREATE|DELETE|DETACH|DROP|INSERT|PRAGMA|REINDEX|RELEASE|ROLLBACK|SAVEPOINT|SELECT|UPDATE|VACUUM|REPLACE|WITH)\\b",
-            "end": "(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\}))",
+            "end": "(?=\"\"\"|\"( ?\n|'|,|\\.|\\)|\\})|'''|'( ?\n'\"|,|\\.|\\)|\\}))",
             "beginCaptures": {
                 "1": {
                     "name": "keyword.other.DML.sql"
@@ -36,8 +36,8 @@
         },
         {
             "name": "meta.embedded.block.sql",
-            "begin": "(?<!\\w+\\s+)(--.+)\\b",
-            "end": "(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\}))",
+            "begin": "(?<!\\w+\\s+)(--[^\"']+)",
+            "end": "(?=\"\"\"|\"( ?\n|'|,|\\.|\\)|\\})|'''|'( ?\n|\"|,|\\.|\\)|\\}))",
             "beginCaptures": {
                 "1": {
                     "name": "comment.line.double-dash.sql"
@@ -51,8 +51,8 @@
         },
         {
             "name": "meta.embedded.block.sql",
-            "begin": "^\\s*(--.+)\\b",
-            "end": "(?=\"\"\"|\"( ?\n|,|\\.|\\)|\\})|'''|'( ?\n|,|\\.|\\)|\\}))",
+            "begin": "^\\s*(--[^\"']+)",
+            "end": "(?=\"\"\"|\"( ?\n|'|,|\\.|\\)|\\})|'''|'( ?\n|\"|,|\\.|\\)|\\}))",
             "beginCaptures": {
                 "1": {
                     "name": "comment.line.double-dash.sql"

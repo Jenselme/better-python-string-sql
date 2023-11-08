@@ -19,9 +19,13 @@ def main():
 
     logger.error("Oh no: trying to update non-existing thing: %s".format(), 23)
 
+    # Check rendering.
+
     conn = sqlite3.connect(":memory:")
 
     logger.error("""Oh no: trying to update non-existing thing: %s""".format(), 23)
+
+    # Check rendering.
 
     conn = sqlite3.connect(":memory:")
 
@@ -31,6 +35,9 @@ def main():
                  """.format(),
         23,
     )
+
+    # Check rendering.
+
     conn = sqlite3.connect(":memory:")
 
     logger.error(
@@ -39,6 +46,7 @@ def main():
         """.format(),
         23,
     )
+    # Check rendering.
     conn = sqlite3.connect(":memory:")
 
     logger.error(
@@ -48,6 +56,7 @@ def main():
         """.format(),
         23,
     )
+    # Check rendering.
     conn = sqlite3.connect(":memory:")
 
     logger.error(
@@ -57,6 +66,7 @@ def main():
         """.format(),
         23,
     )
+    # Check rendering.
     conn = sqlite3.connect(":memory:")
 
     logger.error(
@@ -66,6 +76,7 @@ def main():
         """.format(),
         23,
     )
+    # Check rendering.
     conn = sqlite3.connect(":memory:")
 
     toto = "selectedFiles"
@@ -81,8 +92,7 @@ def main():
         """
     )
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     conn.executescript(
         """
@@ -95,8 +105,7 @@ def main():
         """
     )
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     conn.executescript(
         """
@@ -109,45 +118,37 @@ def main():
         """
     )
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     t = """SELECT auneisrta FROM auniestnarsuiet"""
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     tt = """SELECT tot FROM anursiet"""
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     t = """<p>Cocuou</p>"""
 
     """SELECT toto from toto"""
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     x = """SELECT * from toto"""
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     conn.executemany("INSERT INTO foobar VALUES (?, ?);", DATASET)
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     conn.executemany('INSERT INTO foobar VALUES (?, ?);', DATASET)
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     conn.executemany("INSERT INTO foobar VALUES (?, ?)", DATASET)
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     conn.executemany("INSERT INTO foobar VALUES ('toto', ?)", DATASET)
 
@@ -157,8 +158,7 @@ def main():
     FROM toto;
     """
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     query2 = """
         SELECT
@@ -173,8 +173,7 @@ def main():
         LIMIT 10;
     """
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     query2 = '''
         SELECT
@@ -189,8 +188,7 @@ def main():
         LIMIT 10;
     '''
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     query = """
         SELECT last_name,
@@ -203,8 +201,7 @@ def main():
         LIMIT 10;
     """
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     query3 = f"""
         SELECT last_name,
@@ -219,8 +216,7 @@ def main():
         LIMIT 10
     """
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     query3 = f'''
         SELECT last_name,
@@ -235,8 +231,7 @@ def main():
         LIMIT 10
     '''
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     query3 = f"""
         -- Coucou
@@ -252,35 +247,28 @@ def main():
         LIMIT 10
     """
 
-    my_func("coucou")
-    print("toto")
+    # Check rendering.
 
     another_query = f"SELECT last_name FROM foobar WHERE {toto}"
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     another_query = "SELECT last_name FROM foobar;"
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
     yaq = "SELECT last_name FROM foobar;"
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     another_query = "SELECT last_name FROM foobar"
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
     yaq = "SELECT last_name FROM foobar"
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     yaq2 = """
         SELECT last_name FROM foobar
     """
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     yaq3 = """
          SELECT last_name FROM foobar
@@ -288,8 +276,7 @@ def main():
             AND tartiflette = 'toto'
     """
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     yaq3 = """
          SELECT last_name FROM foobar -- toto
@@ -297,8 +284,7 @@ def main():
             AND tartiflette = 'toto'
     """
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     yaq3 = """
          SELECT last_name FROM foobar
@@ -306,20 +292,51 @@ def main():
             AND tartiflette = 'toto'
     """
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     print(conn.execute(query).fetchall())
 
     print(conn.execute("SELECT * FROM my_table"))
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
 
     queries = {"toto": "SELECT * FROM my_table"}
 
-    print("toto")
-    my_func("coucou")
+    # Check rendering.
+
+    conditions_arg = "--where"
+    print(conditions_arg)
+
+    # Check rendering.
+
+    conditions_arg = "--where='"
+
+    # Check rendering.
+
+    conditions_arg = f"--where='{toto}'"
+
+    # Check rendering.
+
+    conditions_arg = ("--where='" + " AND ")
+
+    # Check rendering.
+    conditions = []
+    conditions_arg = ("--where='" + " AND ".join(conditions) + "'") if conditions else ""
+
+    # Check rendering.
+
+    # Unsupported: nested scope: the SQL we master which will create a nested
+    # comment which will only end with a \n
+    # At this point, we cannot end the parsing. I don’t think it makes much
+    # sense anyway, write comments in Python in this case.
+    # conditions_arg = "SELECT * FROM toto --WHERE toto"
+
+    # Check rendering.
+
+    conditions_arg = """SELECT * FROM toto
+                    --WHERE toto"""
+
+    # Check rendering.
 
 
 if __name__ == "__main__":
