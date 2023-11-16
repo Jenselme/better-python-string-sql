@@ -333,8 +333,52 @@ def main():
 
     # Check rendering.
 
-    conditions_arg = """SELECT * FROM toto
-                    --WHERE toto"""
+    #conditions_arg = """SELECT * FROM toto --WHERE toto
+    #"""
+
+    code = compile(arg, """"<string>""", 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, """"<string>
+""", 'eval')
+
+    # Check rendering.
+
+#     code = compile(arg, """"<string></string
+# """, 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, """<string class="toto">""", 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, """toto <string class="toto">""", 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, """<custom-tag></custom-tag>""", 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, """<custom-tag class="toto"></custom-tag>""", 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, '<string>', 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, '<string class="toto">', 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, "<string class=\"toto\">", 'eval')
+
+    # Check rendering.
+
+    code = compile(arg, "<string class='toto'>", 'eval')
 
     # Check rendering.
 

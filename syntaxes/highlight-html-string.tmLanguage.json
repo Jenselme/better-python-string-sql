@@ -1,0 +1,39 @@
+{
+    "fileTypes": [
+        "py"
+    ],
+    "injectionSelector": "L:string.quoted.multi.python, L:meta.fstring.python - (comment.line.number-sign.python, punctuation.definition.comment.python)",
+    "patterns": [
+        {
+            "begin": "(?<!\\w+\\s+)(<!--.*-->)",
+            "end": "\\s*(?=\"\"\"|''')",
+            "captures": {
+                "1": {
+                    "name": "comment.block.html"
+                }
+            },
+            "contentName": "meta.embedded.block.html",
+            "patterns": [
+                {
+                    "include": "text.html.derivative"
+                }
+            ]
+        },
+        {
+            "begin": "(?<!\\w+\\s+)(<[a-z]+[0-1]*(?:-[a-z]+[0-9]*)?(?: [^>]+)*>)",
+            "end": "\\s*(?=\"\"\"|''')",
+            "captures": {
+                "1": {
+                    "name": "entity.name.tag"
+                }
+            },
+            "contentName": "meta.embedded.block.html",
+            "patterns": [
+                {
+                    "include": "text.html.derivative"
+                }
+            ]
+        }
+    ],
+    "scopeName": "python-html.injection"
+}

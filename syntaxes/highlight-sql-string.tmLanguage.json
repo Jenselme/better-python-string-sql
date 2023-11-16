@@ -63,36 +63,6 @@
                     "include": "source.sql"
                 }
             ]
-        },
-        {
-            "begin": "\\s*(<!--.*-->)",
-            "end": "\\s*(?=\"\"\"|''')",
-            "captures": {
-                "1": {
-                    "name": "comment.block.html"
-                }
-            },
-            "contentName": "meta.embedded.block.html",
-            "patterns": [
-                {
-                    "include": "text.html.derivative"
-                }
-            ]
-        },
-        {
-            "begin": "\\s*(<[a-z]+[0-1]*-?[a-z]*[0-9]*>)",
-            "end": "\\s*(?=\"\"\"|''')",
-            "captures": {
-                "1": {
-                    "name": "entity.name.tag"
-                }
-            },
-            "contentName": "meta.embedded.block.html",
-            "patterns": [
-                {
-                    "include": "text.html.derivative"
-                }
-            ]
         }
     ],
     "scopeName": "python-sql.injection"
