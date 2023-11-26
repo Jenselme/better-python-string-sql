@@ -2,11 +2,11 @@
     "name": "better-python-string-sql",
     "displayName": "better-python-string-sql",
     "description": "highlight python strings as sql",
-    "version": "0.0.2",
-    "publisher": "Submersible",
+    "version": "1.0.0",
+    "publisher": "jenselme",
     "icon": "docs/logo.png",
     "repository": {
-        "url": "https://github.com/Submersible/better-python-string-sql"
+        "url": "https://github.com/Jenselme/better-python-strings"
     },
     "engines": {
         "vscode": "^1.0.0"
@@ -25,10 +25,21 @@
                 "embeddedLanguages": {
                     "meta.embedded.block.sql": "sql"
                 }
+            },
+            {
+                "path": "./syntaxes/highlight-html-string.tmLanguage.json",
+                "scopeName": "python-html.injection",
+                "injectTo": [
+                    "source.python"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.block.html": "html"
+                }
             }
         ]
     },
     "scripts": {
-        "package": "npx vsce package"
+        "package": "npx vsce package",
+        "publish": "npx vsce publish"
     }
 }
