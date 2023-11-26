@@ -1,6 +1,6 @@
 {
-    "name": "better-python-string-sql",
-    "displayName": "better-python-string-sql",
+    "name": "better-python-strings",
+    "displayName": "better-python-strings",
     "description": "highlight python strings as sql",
     "version": "1.0.0",
     "publisher": "jenselme",
